@@ -2,6 +2,7 @@ export default class Users {
     static Base_url = "https://blog-m2.herokuapp.com"
 
     static token = JSON.parse(localStorage.getItem("token"))
+    static userId = JSON.parse(localStorage.getItem("userId"))
 
     static async postUsuario(id){
         return await fetch(`${this.Base_url}/users/${id}`, {
@@ -19,4 +20,4 @@ export default class Users {
     }
 }
 
-
+Users.postUsuario(this.userId)
